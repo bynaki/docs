@@ -34,7 +34,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ## Configure Tmux
 
 ```bash
-ln -sf %DEVENV/.tmux.conf $HOME/.tmux.conf
+ln -sf $DEVENV/.tmux.conf $HOME/.tmux.conf
 ```
 
 ## Install Tmux Plugins

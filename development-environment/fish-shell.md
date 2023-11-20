@@ -108,7 +108,7 @@ sudo pacman -S peco
 
 ## Configure Fish
 
-```bash
+```shell
 fish ~/devenv/config/fish/config.fish
-ln -sf $DEVENV/config/fish/config.fish $XDG_CONFIG_HOME/fish/config.fish
+cp $DEVENV/config/fish/config.fish $XDG_CONFIG_HOME/fish/
 ```

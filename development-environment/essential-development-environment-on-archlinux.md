@@ -33,8 +33,8 @@ sudo pacman -S openssh
 ```
 
 ## Generate a new SSH key
-
 [Generating a new SSH key and adding it to the ssh-agent - GitHub Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
 ```shell
 ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
@@ -63,19 +63,38 @@ git clone https://github.com/bynaki/devenv.git $DEVENV
 ln -sf $DEVENV/.gitconfig ~/.gitconfig
 ```
 
-## Install & Configure netctl
+## Wake-on-LAN via NetworkManager
 
-> for wol and static ip
+https://wiki.archlinux.org/title/Wake-on-LAN#NetworkManager
 
+NetworkManager provides [Wake-on-LAN ethernet support](https://www.phoronix.com/scan.php?page=news_item&px=NetworkManager-WoL-Control). One way to enable Wake-on-LAN by magic packet is through _nmcli_.
+First, search for the name of the wired connection:
 ```shell
-sudo pacman -S netctl
-sudo ln -sf $DEVENV/config/netctl-profile /etc/netctl/netctl-profile
-sudo netctl restart netctl-profile
-sudo netctl reenable netctl-profile
+nmcli con show
+
+NAME    UUID                                  TYPE            DEVICE
+wired1  612e300a-c047-4adb-91e2-12ea7bfe214e  802-3-ethernet  enp0s25
 ```
+
+By following, one can view current status of Wake-on-LAN settings:
+```shell
+nmcli c show "wired1" | grep 802-3-ethernet.wake-on-lan
+
+802-3-ethernet.wake-on-lan:             default
+802-3-ethernet.wake-on-lan-password:    --
+```
+
+Enable Wake-on-LAN by magic packet on that connection:
+```shell
+nmcli c modify "wired1" 802-3-ethernet.wake-on-lan magic
+```
+
+Then reboot, possibly two times.
 
 ## Install Mosh
 https://mosh.org
+
+> for mobile devices
 
 ```shell
 sudo pacman -S mosh
