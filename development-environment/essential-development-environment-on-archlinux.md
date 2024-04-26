@@ -114,3 +114,13 @@ sudo pacman -S neofetch
 ```bash
 brew install ripgrep
 ```
+
+## Install ntp
+https://wiki.archlinux.org/title/Network_Time_Protocol_daemon
+
+>  Network Time Protocol daemon
+
+```shell
+sudo pacman -S ntp
+sudo systemctl enable ntpd.service
+```
