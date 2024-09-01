@@ -5,15 +5,15 @@ tags:
   - anaconda
 ---
 
-# Install and Initialize Anaconda
+# Install Python with Anaconda
 
-## Install Anaconda on Mac
+### Install Anaconda on Mac
 
 ```bash
 brew install anaconda
 ```
 
-## Install Anaconda on Linux
+### Install Anaconda on Linux
 
 ```shell
 # Replace <INSTALLER_VERSION> with the version of the installer file you want to download
@@ -28,7 +28,7 @@ curl -O https://repo.anaconda.com/archive/Anaconda3-<INSTALLER_VERSION>-Linux-x8
 bash ~/Downloads/Anaconda3-<INSTALLER_VERSION>-Linux-x86_64.sh
 ```
 
-## Add Path Conda
+### Add Path Conda
 
 ```bash
 fish_add_path /opt/homebrew/anaconda3/bin   # sillicon on mac
@@ -36,37 +36,37 @@ fish_add_path /usr/local/anaconda3/bin      # intel on mac
 fish_add_path $HOME/anaconda3/bin           # linux
 ```
 
-## Initialize Environment to Fish Shell
+### Initialize Environment to Fish Shell
 
 ```bash
 conda init fish
 ```
 
-Environment List
+### Environment List
 
 ```bash
 conda env list
 ```
 
-## Create a Environment
+### Create a Environment
 
 ```bash
 conda create -n myenv
 ```
 
-## 가상환경 활성
+### 가상환경 활성
 
 ```bash
 conda activate myenv
 ```
 
-## 가상환경 비활성
+### 가상환경 비활성
 
 ```bash
 conda deactivate
 ```
 
-## Login 할때 가상환경 지정
+### Login 할때 가상환경 지정
 
 ```shell
 # in config.fish
