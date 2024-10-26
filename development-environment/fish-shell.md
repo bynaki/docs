@@ -68,25 +68,6 @@ fisher install IlanCosman/tide@v5
 fisher install jethrokuan/z
 ```
 
-## Install exa
-
-[exa · a modern replacement for ls](https://the.exa.website/)
-
-> A  modern replacement for ls.
-> 
-
-### on Mac:
-
-```bash
-brew install exa
-```
-
-### on Arch Linx:
-
-```bash
-sudo pacman -S exa
-```
-
 ## Install peco
 
 [https://github.com/peco/peco](https://github.com/peco/peco)
